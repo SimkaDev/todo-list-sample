@@ -5,4 +5,5 @@ import com.simka.todolistsample.model.Todo
 
 interface TodoRepository {
     fun getTodoList(): LiveData<List<Todo>>
+    suspend fun updateTodo(todo: Todo)
 }

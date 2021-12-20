@@ -8,4 +8,8 @@ class TodoRepositoryImpl(private val database: TodoDatabase): TodoRepository {
 
     override fun getTodoList() : LiveData<List<Todo>> =
         database.todoDao().getTodoList()
+
+    override suspend fun updateTodo(todo: Todo) {
+        database.todoDao().updateTodo(todo)
+    }
 }
