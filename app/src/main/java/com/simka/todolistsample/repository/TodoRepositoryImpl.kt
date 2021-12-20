@@ -12,4 +12,8 @@ class TodoRepositoryImpl(private val database: TodoDatabase): TodoRepository {
     override suspend fun updateTodo(todo: Todo) {
         database.todoDao().updateTodo(todo)
     }
+
+    override suspend fun saveTodo(todo: Todo) {
+        database.todoDao().saveTodo(todo)
+    }
 }

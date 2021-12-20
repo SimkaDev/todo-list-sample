@@ -10,6 +10,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.simka.todolistsample.databinding.MainFragmentBinding
 import com.simka.todolistsample.model.Todo
+import com.simka.todolistsample.ui.dialog.AddTodoFragment
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class MainFragment: Fragment(), TodoListAdapter.ClickTodoItemListener {
@@ -32,6 +33,10 @@ class MainFragment: Fragment(), TodoListAdapter.ClickTodoItemListener {
         super.onViewCreated(view, savedInstanceState)
         initAdapter()
         setupObservers()
+
+        binding.addTodo.setOnClickListener {
+            addTodo()
+        }
     }
 
     private fun setupObservers() {
@@ -43,6 +48,11 @@ class MainFragment: Fragment(), TodoListAdapter.ClickTodoItemListener {
     private fun initAdapter() {
         binding.todoRecyclerView.adapter = todoListAdapter
         binding.todoRecyclerView.layoutManager = LinearLayoutManager(activity)
+    }
+
+    private fun addTodo() {
+        val dialog = AddTodoFragment()
+        dialog.show(childFragmentManager, dialog.tag)
     }
 
     override fun onDestroyView() {
@@ -58,5 +68,6 @@ class MainFragment: Fragment(), TodoListAdapter.ClickTodoItemListener {
         val action = MainFragmentDirections.actionMainToDetail(todo)
         findNavController().navigate(action)
     }
+
 
 }

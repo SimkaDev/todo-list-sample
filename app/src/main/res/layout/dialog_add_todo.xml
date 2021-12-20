@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="@dimen/default_margins">
+
+    <TextView
+        android:id="@+id/creationTodo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:text="@string/todo_add_title"
+        android:textSize="@dimen/large_title_text_size"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/titleTodo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:text="@string/todo_title"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/newTodoTitleInput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/default_margins"
+        android:inputType="text"
+        android:labelFor="@id/titleTodo"
+        tools:ignore="Autofill" />
+
+    <TextView
+        android:id="@+id/descriptionLabel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:text="@string/todo_description"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/descriptionInput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/default_margins"
+        android:labelFor="@id/descriptionLabel"
+        android:ems="10"
+        android:gravity="start|top"
+        android:inputType="textMultiLine"
+        tools:ignore="Autofill" />
+
+
+    <Button
+        style="@style/TextAppearance.AppCompat.Widget.Button.Colored"
+        android:id="@+id/saveTodoAction"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="@dimen/default_margins"
+        android:backgroundTint="@color/light_blue_grey"
+        android:padding="@dimen/default_margins"
+        android:text="@string/save"
+        android:textColor="@color/white" />
+
+</LinearLayout>

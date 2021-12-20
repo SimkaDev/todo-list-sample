@@ -3,7 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="app/src/main/res/drawable/ic_add.xml" value="0.17395833333333333" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.14387031408308004" />
+        <entry key="app/src/main/res/layout/dialog_add_todo.xml" value="0.165" />
         <entry key="app/src/main/res/layout/item_todo.xml" value="0.375" />
         <entry key="app/src/main/res/layout/main_fragment.xml" value="0.15070921985815602" />
         <entry key="app/src/main/res/layout/todo_detail_fragment.xml" value="0.14628623188405798" />

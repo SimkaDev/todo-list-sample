@@ -2,4 +2,9 @@
     <string name="app_name">Todo List Sample</string>
     <string name="detail">Detail</string>
     <string name="todolist">Todo List</string>
+    <string name="todo_add_title">New TODO</string>
+    <string name="todo_title">Title *</string>
+    <string name="todo_description">Description</string>
+    <string name="save">Save</string>
+    <string name="field_error">Mandatory field</string>
 </resources>

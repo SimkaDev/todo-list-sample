@@ -8,9 +8,14 @@
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/blue_grey</item>
         <item name="colorSecondaryVariant">@color/dark_blue_grey</item>
-        <item name="colorOnSecondary">@color/light_blue_grey</item>
+        <item name="colorOnSecondary">@color/white</item>
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
+    </style>
+
+    <style name="FragmentDialogTheme" parent="Theme.AppCompat.Light.Dialog">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsFloating">true</item>
     </style>
 </resources>
