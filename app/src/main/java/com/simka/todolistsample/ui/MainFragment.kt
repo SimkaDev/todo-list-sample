@@ -6,12 +6,13 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.simka.todolistsample.databinding.MainFragmentBinding
 import com.simka.todolistsample.model.Todo
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
-class MainFragment: Fragment(), TodoListAdapter.CheckboxListener {
+class MainFragment: Fragment(), TodoListAdapter.ClickTodoItemListener {
 
     private var _binding: MainFragmentBinding? = null
     private val binding get() = _binding!!
@@ -51,6 +52,11 @@ class MainFragment: Fragment(), TodoListAdapter.CheckboxListener {
 
     override fun changeTodoStatus(isChecked: Boolean, todo: Todo) {
         viewModel.updateTodoStatus(isChecked, todo)
+    }
+
+    override fun selectTodo(todo: Todo) {
+        val action = MainFragmentDirections.actionMainToDetail(todo)
+        findNavController().navigate(action)
     }
 
 }

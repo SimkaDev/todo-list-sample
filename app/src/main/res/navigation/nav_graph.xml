@@ -7,5 +7,18 @@
     <fragment
         android:id="@+id/mainFragment"
         android:name="com.simka.todolistsample.ui.MainFragment"
-        android:label="MainFragment" />
+        android:label="@string/todolist" >
+        <action
+            android:id="@+id/actionMainToDetail"
+            app:destination="@id/todoDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/todoDetailFragment"
+        android:name="com.simka.todolistsample.ui.detail.TodoDetailFragment"
+        android:label="@string/detail">
+
+        <argument
+            android:name="selectedTodo"
+            app:argType="com.simka.todolistsample.model.Todo" />
+    </fragment>
 </navigation>

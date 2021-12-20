@@ -11,11 +11,12 @@ import com.simka.todolistsample.R
 import com.simka.todolistsample.model.Todo
 
 
-class TodoListAdapter(val listener: TodoListAdapter.CheckboxListener) :
+class TodoListAdapter(private val listener: TodoListAdapter.ClickTodoItemListener) :
     RecyclerView.Adapter<TodoViewHolder>() {
 
-    interface CheckboxListener {
+    interface ClickTodoItemListener {
         fun changeTodoStatus(isChecked: Boolean, todo: Todo)
+        fun selectTodo(todo: Todo)
     }
 
     private val items = mutableListOf<Todo>()
@@ -38,6 +39,10 @@ class TodoListAdapter(val listener: TodoListAdapter.CheckboxListener) :
 
         holder.itemView.findViewById<CheckBox>(R.id.checkboxTodo).setOnCheckedChangeListener { _, isChecked ->
             listener.changeTodoStatus(isChecked, items[position])
+        }
+
+        holder.itemView.setOnClickListener {
+            listener.selectTodo(items[position])
         }
     }
 
